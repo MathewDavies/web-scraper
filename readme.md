@@ -1,6 +1,6 @@
-#RightMove Data to Excel
+# RightMove Data to Excel
 
-## Application function
+## What does it do?
 
 This application allows you to input search criteria and then get search results from the popular UK Website Rightmove. It provides a summary of property prices, an table of all properties and an option to download a CSV file (to save as a spreadsheet). This was inspired by a request from a Property Investor who wanted to know the average property prices for properties in his area, based on certain criteria. 
 
@@ -42,7 +42,7 @@ An informative video on the legalities of web scraping: <https://www.youtube.com
 
 This code selects fields based on IDs and class names. If Rightmove decides to change its class names, IDs or format, then this scraper will break. There is not much we can do about this, other than wait until it happens and adjust the code accordingly. 
 
-# What could be improved?
+## What could be improved?
 
 I am pretty happy with the code, although given infinite time, there are plenty of things I could do:
 
