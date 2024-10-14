@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Puppeteer Scraped Data</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="page-container">
+        <h1>Right Move Data Scrapper</h1>
+
+        <div class="form-container">
+            <div class="half-container">
+                <p class="margin-t-0">Location</p>
+                <input class="location-input" id="location" name="locationSearch" type="text" maxlength="100"
+                    data-testid="typeahead-searchbox" autocomplete="off" placeholder="e.g. Bath, NW3, or Leeds station">
+                <label for="radius">Search Radius</label>
+                <select id="radius" title="Search radius" name="radius">
+                    <option value="0.0" selected="">This area only</option>
+                    <option value="0.25">Within ¼ mile</option>
+                    <option value="0.5">Within ½ mile</option>
+                    <option value="1.0">Within 1 mile</option>
+                    <option value="3.0">Within 3 miles</option>
+                    <option value="5.0">Within 5 miles</option>
+                    <option value="10.0">Within 10 miles</option>
+                    <option value="15.0">Within 15 miles</option>
+                    <option value="20.0">Within 20 miles</option>
+                    <option value="30.0">Within 30 miles</option>
+                    <option value="40.0">Within 40 miles</option>
+                </select>
+                <div>
+                    <p>Price Range £</p>
+                    <div class="selectors">
+                        <select id="minPrice" title="Minimum price" data-testid="minPrice" name="minPrice">
+                            <option value="" selected="">No min</option>
+                            <option value="50000">50,000</option>
+                            <option value="60000">60,000</option>
+                            <option value="70000">70,000</option>
+                            <option value="80000">80,000</option>
+                            <option value="90000">90,000</option>
+                            <option value="100000">100,000</option>
+                            <option value="110000">110,000</option>
+                            <option value="120000">120,000</option>
+                            <option value="125000">125,000</option>
+                            <option value="130000">130,000</option>
+                            <option value="140000">140,000</option>
+                            <option value="150000">150,000</option>
+                            <option value="160000">160,000</option>
+                            <option value="170000">170,000</option>
+                            <option value="175000">175,000</option>
+                            <option value="180000">180,000</option>
+                            <option value="190000">190,000</option>
+                            <option value="200000">200,000</option>
+                            <option value="210000">210,000</option>
+                            <option value="220000">220,000</option>
+                            <option value="230000">230,000</option>
+                            <option value="240000">240,000</option>
+                            <option value="250000">250,000</option>
+                            <option value="260000">260,000</option>
+                            <option value="270000">270,000</option>
+                            <option value="280000">280,000</option>
+                            <option value="290000">290,000</option>
+                            <option value="300000">300,000</option>
+                            <option value="325000">325,000</option>
+                            <option value="350000">350,000</option>
+                            <option value="375000">375,000</option>
+                            <option value="400000">400,000</option>
+                            <option value="425000">425,000</option>
+                            <option value="450000">450,000</option>
+                            <option value="475000">475,000</option>
+                            <option value="500000">500,000</option>
+                            <option value="550000">550,000</option>
+                            <option value="600000">600,000</option>
+                            <option value="650000">650,000</option>
+                            <option value="700000">700,000</option>
+                            <option value="800000">800,000</option>
+                            <option value="900000">900,000</option>
+                            <option value="1000000">1,000,000</option>
+                            <option value="1250000">1,250,000</option>
+                            <option value="1500000">1,500,000</option>
+                            <option value="1750000">1,750,000</option>
+                            <option value="2000000">2,000,000</option>
+                            <option value="2500000">2,500,000</option>
+                            <option value="3000000">3,000,000</option>
+                            <option value="4000000">4,000,000</option>
+                            <option value="5000000">5,000,000</option>
+                            <option value="7500000">7,500,000</option>
+                            <option value="10000000">10,000,000</option>
+                            <option value="15000000">15,000,000</option>
+                            <option value="20000000">20,000,000</option>
+                        </select>
+                        <select id="maxPrice" title="Maximum price" data-testid="maxPrice" name="maxPrice">
+                            <option value="" selected="">No Max</option>
+                            <option value="50000">50,000</option>
+                            <option value="60000">60,000</option>
+                            <option value="70000">70,000</option>
+                            <option value="80000">80,000</option>
+                            <option value="90000">90,000</option>
+                            <option value="100000">100,000</option>
+                            <option value="110000">110,000</option>
+                            <option value="120000">120,000</option>
+                            <option value="125000">125,000</option>
+                            <option value="130000">130,000</option>
+                            <option value="140000">140,000</option>
+                            <option value="150000">150,000</option>
+                            <option value="160000">160,000</option>
+                            <option value="170000">170,000</option>
+                            <option value="175000">175,000</option>
+                            <option value="180000">180,000</option>
+                            <option value="190000">190,000</option>
+                            <option value="200000">200,000</option>
+                            <option value="210000">210,000</option>
+                            <option value="220000">220,000</option>
+                            <option value="230000">230,000</option>
+                            <option value="240000">240,000</option>
+                            <option value="250000">250,000</option>
+                            <option value="260000">260,000</option>
+                            <option value="270000">270,000</option>
+                            <option value="280000">280,000</option>
+                            <option value="290000">290,000</option>
+                            <option value="300000">300,000</option>
+                            <option value="325000">325,000</option>
+                            <option value="350000">350,000</option>
+                            <option value="375000">375,000</option>
+                            <option value="400000">400,000</option>
+                            <option value="425000">425,000</option>
+                            <option value="450000">450,000</option>
+                            <option value="475000">475,000</option>
+                            <option value="500000">500,000</option>
+                            <option value="550000">550,000</option>
+                            <option value="600000">600,000</option>
+                            <option value="650000">650,000</option>
+                            <option value="700000">700,000</option>
+                            <option value="800000">800,000</option>
+                            <option value="900000">900,000</option>
+                            <option value="1000000">1,000,000</option>
+                            <option value="1250000">1,250,000</option>
+                            <option value="1500000">1,500,000</option>
+                            <option value="1750000">1,750,000</option>
+                            <option value="2000000">2,000,000</option>
+                            <option value="2500000">2,500,000</option>
+                            <option value="3000000">3,000,000</option>
+                            <option value="4000000">4,000,000</option>
+                            <option value="5000000">5,000,000</option>
+                            <option value="7500000">7,500,000</option>
+                            <option value="10000000">10,000,000</option>
+                            <option value="15000000">15,000,000</option>
+                            <option value="20000000">20,000,000</option>
+                        </select>
+                    </div>
+                </div>   
+                <div>
+                </div>
+            </div>
+            <div class="half-container">
+                <div class="bedrooms">
+                    <p class="margin-t-0">Bedrooms</p>
+                    <div class="selectors">
+                        <select id="minBedrooms" data-testid="minBedrooms" title="Minimum No. of bedrooms"
+                            name="minBedrooms">
+                            <option value="" selected="">No min</option>
+                            <option value="0">Studio</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <select id="maxBedrooms" data-testid="maxBedrooms" title="Maximum No. of bedrooms"
+                            name="maxBedrooms">
+                            <option value="" selected="">No max</option>
+                            <option value="0">Studio</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="selectors">
+                    <div>
+                    <p class="inline" for="Property Types">Property Types</p>
+                    <select id="propertyTypes" title="Property types" data-testid="propertyTypes" name="propertyTypes">
+                        <option value="" selected="">Any</option>
+                        <option value="house">Houses</option>
+                        <option value="flat">Flats / Apartments</option>
+                        <option value="bungalow">Bungalows</option>
+                        <option value="land">Land</option>
+                        <option value="commercial">Commercial Property</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div>
+                    <p for="maxDaysSinceAdded"> Added to Site</p>
+                    <select id="maxDaysSinceAdded" title="Added to site" name="maxDaysSinceAdded">
+                        <option value="" selected="">Anytime</option>
+                        <option value="1">Last 24 hours</option>
+                        <option value="3">Last 3 days</option>
+                        <option value="7">Last 7 days</option>
+                        <option value="14">Last 14 days</option>
+                    </select>
+                </div>
+                </div>
+                <div class="margin-t-25">
+                    <button class="button-blue" type="button" id="get-data">Fetch Data</button>
+                    <button class="button-disabled" type="button" disabled="true" id="download-data">Download Data</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="results">
+            <!-- <p class="total-properties">Total Properties: 26</p><div class="average-prices"><h3>Average Price by Number of Bedrooms:</h3><span>Average Price: £262402</span><span> | 2 Bedrooms: £161667</span><span> | 3 Bedrooms: £253747</span><span> | 4 Bedrooms: £354000</span></div><table border="1"><tr><th>Property Name</th><th>Price</th><th>Type</th><th>Bedrooms</th><th>Bathrooms</th><th>Link</th></tr><tr><td>Graig Park Parade, Malpas, Newport. NP20 6GW</td><td>250000</td><td>Semi-Detached</td><td>3</td><td>1</td><td><a href="https://www.rightmove.co.uk/properties/153494501#/?channel=RES_BUY" target="_blank">View Property</a></td></tr><tr><td>Afon Gardens, Ponthir, NP18</td><td>500000</td><td>Detached</td><td>4</td><td>2</td><td><a href="https://www.rightmove.co.uk/properties/152744585#/?channel=RES_BUY" target="_blank">View Property</a></td></tr><tr><td>Old Hill, Christchurch, Newport, NP18</td><td>499995</td><td>Detached</td><td>3</td><td>3</td><td><a href="https://www.rightmove.co.uk/properties/151515236#/?channel=RES_BUY" target="_blank">View Property</a></td></tr><tr><td>Grove Park Drive, Newport, NP20</td><td>375000</td><td>Detached</td><td>4</td><td>1</td><td><a href="https://www.rightmove.co.uk/properties/153585566#/?channel=RES_BUY" target="_blank">View Property</a></td></tr><tr><td>Northumberland Road, Newport, NP19</td><td>340000</td><td>Semi-Detached</td><td>4</td><td>2</td><td><a href="https://www.rightmove.co.uk/properties/153646448#/?channel=RES_BUY" target="_blank">View Property</a></td></tr><tr><td>St. Julians Road, Newport, NP19</td><td>325000</td><td>Semi-Detached</td><td>4</td><td>1</td><td><a href="https://www.rightmove.co.uk/properties/153469532#/?channel=RES_BUY" target="_blank">View Property</a></td></tr><tr><td>Hafod Close, Ponthir, NP18</td><td>325000</td><td>Semi-Detached</td><td>3</td><td>1</td><td><a href="https://www.rightmove.co.uk/properties/153509777#/?channel=RES_BUY" target="_blank">View Property</a></td></tr><tr><td>Alanbrooke Avenue, Malpas - REF #00025660</td><td>300000</td><td>Detached</td><td>3</td><td>1</td><td><a href="https://www.rightmove.co.uk/properties/153566132#/?channel=RES_BUY" target="_blank">View Property</a></td></tr><tr><td>Glanmor Park Avenue, Newport, NP19</td><td>287500</td><td>Semi-Detached</td><td>3</td><td>3</td><td><a href="https://www.rightmove.co.uk/properties/152746076#/?channel=RES_BUY" target="_blank">View Property</a></td></tr><tr><td>Christchurch Road, Newport, NP19</td><td>280000</td><td>Semi-Detached</td><td>3</td><td>2</td><td><a href="https://www.rightmove.co.uk/properties/153677981#/?channel=RES_BUY" target="_blank">View Property</a></td></tr><tr><td>Ringland Circle, Newport - REF #00022667</td><td>270000</td><td>Detached</td><td>3</td><td>2</td><td><a href="https://www.rightmove.co.uk/properties/153280790#/?channel=RES_BUY" target="_blank">View Property</a></td></tr><tr><td>Upper Tennyson Road, Newport, NP19</td><td>260000</td><td>Detached</td><td>3</td><td>1</td><td><a href="https://www.rightmove.co.uk/properties/151759613#/?channel=RES_BUY" target="_blank">View Property</a></td></tr><tr><td>Elgar Close, Newport, NP19</td><td>250000</td><td>Detached</td><td>3</td><td>2</td><td><a href="https://www.rightmove.co.uk/properties/152720324#/?channel=RES_BUY" target="_blank">View Property</a></td></tr><tr><td>Caerleon Road, Newport, NP19</td><td>250000</td><td>Semi-Detached</td><td>3</td><td>1</td><td><a href="https://www.rightmove.co.uk/properties/153457601#/?channel=RES_BUY" target="_blank">View Property</a></td></tr><tr><td>Llandegveth, Newport, NP18</td><td>250000</td><td>Bungalow</td><td>2</td><td>1</td><td><a href="https://www.rightmove.co.uk/properties/152168756#/?channel=RES_BUY" target="_blank">View Property</a></td></tr><tr><td>Lawrence Hill Avenue, Newport</td><td>240000</td><td>Semi-Detached</td><td>3</td><td>1</td><td><a href="https://www.rightmove.co.uk/properties/153601520#/?channel=RES_BUY" target="_blank">View Property</a></td></tr><tr><td>Somerset Road, Newport, NP19</td><td>230000</td><td>Terraced</td><td>4</td><td>2</td><td><a href="https://www.rightmove.co.uk/properties/151739429#/?channel=RES_BUY" target="_blank">View Property</a></td></tr><tr><td>Chepstow Road, Newport, NP19</td><td>219950</td><td>Terraced</td><td>3</td><td>1</td><td><a href="https://www.rightmove.co.uk/properties/153569711#/?channel=RES_BUY" target="_blank">View Property</a></td></tr><tr><td>Forest Close, Newport - REF# 00024781</td><td>210000</td><td>Semi-Detached</td><td>3</td><td>1</td><td><a href="https://www.rightmove.co.uk/properties/151003376#/?channel=RES_BUY" target="_blank">View Property</a></td></tr><tr><td>Milton Road, Newport, NP19</td><td>205000</td><td>Semi-Detached</td><td>3</td><td>1</td><td><a href="https://www.rightmove.co.uk/properties/145306382#/?channel=RES_BUY" target="_blank">View Property</a></td></tr><tr><td>Gainsborough Drive, Newport - REF #00025700</td><td>190000</td><td>Terraced</td><td>3</td><td>1</td><td><a href="https://www.rightmove.co.uk/properties/153551810#/?channel=RES_BUY" target="_blank">View Property</a></td></tr><tr><td>Cumberland Road, Newport, NP19</td><td>190000</td><td>Terraced</td><td>3</td><td>1</td><td><a href="https://www.rightmove.co.uk/properties/153570710#/?channel=RES_BUY" target="_blank">View Property</a></td></tr><tr><td>Rosslyn Road, Newport, NP19</td><td>180000</td><td>End of Terrace</td><td>3</td><td>2</td><td><a href="https://www.rightmove.co.uk/properties/153455072#/?channel=RES_BUY" target="_blank">View Property</a></td></tr><tr><td>Prince Street, Newport</td><td>160000</td><td>Terraced</td><td>2</td><td>1</td><td><a href="https://www.rightmove.co.uk/properties/153499718#/?channel=RES_BUY" target="_blank">View Property</a></td></tr><tr><td>Cot Farm Walk, Newport, NP19</td><td>160000</td><td>Terraced</td><td>3</td><td>1</td><td><a href="https://www.rightmove.co.uk/properties/153704372#/?channel=RES_BUY" target="_blank">View Property</a></td></tr><tr><td>The Moorings, NEWPORT</td><td>75000</td><td>Maisonette</td><td>2</td><td>N/A</td><td><a href="https://www.rightmove.co.uk/properties/152690927#/?channel=RES_BUY" target="_blank">View Property</a></td></tr></table> -->
+        </div>
+        
+    </div>
+
+    <!-- Where the data will be rendered -->
+</body>
+
+</html>
